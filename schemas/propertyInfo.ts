@@ -2,12 +2,12 @@ import {defineField, defineType} from 'sanity'
 
 export default defineType({
     name: 'Property',
-    title: 'Property Information',
+    title: 'Property-Information',
     type: 'document',
     fields: [
       defineField({
         name: 'name',
-        title: 'Property Name',
+        title: 'Property-Name',
         type: 'string',
       }),
       defineField({
@@ -16,24 +16,24 @@ export default defineType({
         type: 'object',
         fields:[
             ({
-                name: 'address',
-                title: 'Address',
-                type: 'string',
+                  name: 'address',
+                  title: 'Address',
+                  type: 'string',
             }),
             ({
-                name: 'pincode',
-                title: 'Pincode',
-                type: 'number'
+                  name: 'pincode',
+                  title: 'Pincode',
+                  type: 'number',
             }),
             ({
-                name: 'link',
-                title: 'Link',
-                type: 'url',
+                  name: 'link',
+                  title: 'Link',
+                  type: 'url',
             }),
             ({
-                name: 'geopoint',
-                title: 'Geopoint',
-                type: 'geopoint',
+                  name: 'geopoint',
+                  title: 'Geopoint',
+                  type: 'geopoint',
             })
         ],
       }),
@@ -56,22 +56,54 @@ export default defineType({
       defineField({
         name: 'configuration',
         title: 'Configuration',
-        type: 'number',
+        type: 'array',
+        of: [{type: 'reference', to: {type: 'totalConfiguration'}}]
       }),
       defineField({
-        name: 'sqft',
-        title: 'Sqft',
-        type: 'number',
-      }),
-      defineField({
-        name: 'carpetArea',
-        title: 'Carpet Area',
+        name: 'totalSqft',
+        title: 'Total-Sqft',
         type: 'number',
       }),
       defineField({
         name: 'possessionDate',
-        title: 'PossessionDate',
+        title: 'Possession-Date',
         type: 'datetime',
+      }),
+      defineField({
+        name: 'propertyDescription',
+        title: 'Property-Description',
+        type: 'string',
+      }),
+      defineField({
+        name: 'status',
+        title: 'Status',
+        type: 'string',
+      }),
+      defineField({
+        name: 'type',
+        title: 'Type',
+        type: 'string',
+      }),
+      defineField({
+        name: 'reraId',
+        title: 'Rera-Id',
+        type: 'number',
+      }),
+      defineField({
+        name: 'floors',
+        title: 'Floors',
+        type: 'number',
+      }),
+      defineField({
+        name: 'area',
+        title: 'Area',
+        type: 'number',
+      }),
+      defineField({
+        name: 'amenities',
+        title: 'Amenities',
+        type: 'array',
+        of: [{type: 'reference', to: {type: 'amenities'}}]
       })
     ],
   

@@ -6,17 +6,17 @@ export default defineType({
     title: 'Testimonial',
     type: 'document',
     fields: [
-    defineField({
-        name: 'propertyTestimonial',
-        title: 'Property',
-        type: 'reference',
-        to: [{type: propertyInfo.name}]
-    }),
-    defineField({
-        name: 'descriptionOfTestimonial',
-        title: 'Description',
-        type: 'string'
-    }),
+        defineField({
+            name: 'nameOfTestimonial',
+            title: 'name',
+            type: 'string'
+        }),
+        defineField({
+            name: 'propertyTestimonial',
+            title: 'Property',
+            type: 'reference',
+            to: [{type: propertyInfo.name}]
+        }),
     defineField({
         name: 'descriptionOfProperty',
         title: 'Description',
