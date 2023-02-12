@@ -49,6 +49,17 @@ export default defineType({
       title: 'Body',
       type: 'blockContent',
     }),
+    defineField( {
+      name: 'featuredblog',
+      title: 'Featured Blog',
+      type: "boolean"
+    } ),
+    defineField( {
+      name: 'suggested',
+      title: 'Suggested Blogs',
+      type: 'reference',
+      to: {type: 'post'}
+    } )
   ],
 
   preview: {
