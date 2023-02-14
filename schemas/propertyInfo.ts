@@ -37,6 +37,13 @@ export default defineType({
             description: 'Please enter area in SqFt',
             placeholder: 'Area in SqFt' 
           }),
+          defineField ({
+            name: 'minPrice',
+            title: 'Minimum Price',
+            type: 'string',
+            description: 'Please enter Minimum Price per SqFt',
+            placeholder: 'eg: 28K' 
+          }),
           defineField({
             name: 'projectDescription',
             title: 'Project Description',
