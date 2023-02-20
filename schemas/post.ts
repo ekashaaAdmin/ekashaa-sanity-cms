@@ -11,6 +11,11 @@ export default defineType({
       type: 'string',
     }),
     defineField({
+      name: 'subTitle',
+      title: 'Sub-Title',
+      type: 'string',
+    }),
+    defineField({
       name: 'slug',
       title: 'Slug',
       type: 'slug',
@@ -49,6 +54,11 @@ export default defineType({
       title: 'Body',
       type: 'blockContent',
     }),
+    defineField( {
+      name: 'featuredblog',
+      title: 'Featured Blog',
+      type: "boolean"
+    } )
   ],
 
   preview: {
