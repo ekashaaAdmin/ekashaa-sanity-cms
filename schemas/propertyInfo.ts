@@ -8,7 +8,8 @@ export default defineType({
       defineField({
         name: 'name',
         title: 'Property Name',
-        type: 'string'
+        type: 'string',
+        validation: Rule => Rule.required()
       }),
       defineField({
         name: 'projectInfo',
@@ -18,12 +19,14 @@ export default defineType({
           defineField ({
             name: 'projectStatus',
             title: 'Project Status',
-            type: 'string'
+            type: 'string',
+            validation: Rule => Rule.required()
           }),
           defineField ({
             name: 'projectType',
             title: 'Project Type',
-            type: 'string'
+            type: 'string',
+            validation: Rule => Rule.required()
           }),
           defineField ({
             name: 'totalFloor',
@@ -42,17 +45,20 @@ export default defineType({
             title: 'Rera Id',
             type: 'string',
             description: 'Please enter ReraId',
+            validation: Rule => Rule.required()
           }),
           defineField({
             name: 'projectDescription',
             title: 'Project Description',
             type: 'string',
+            validation: Rule => Rule.required()
           }),
           defineField ({
             name: 'brochureLink',
             title: 'Brochure Link',
             type: 'string',
-            description: 'Please provide download link for project brochure'
+            description: 'Please provide download link for project brochure',
+            validation: Rule => Rule.required()
           })
         ]
       }),
@@ -71,16 +77,19 @@ export default defineType({
                   name: 'address',
                   title: 'Address',
                   type: 'string',
+                  validation: Rule => Rule.required()
             }),
             ({
                   name: 'pincode',
                   title: 'Pincode',
                   type: 'number',
+                  validation: Rule => Rule.required()
             }),
             ({
                   name: 'link',
                   title: 'Google Maps Link',
                   type: 'url',
+                  validation: Rule => Rule.required()
             })
         ],
       }),
@@ -114,7 +123,8 @@ export default defineType({
         name: 'imageUrls',
         title: 'Property Images/Photos',
         type: 'array',
-        of: [{type: 'image'}]
+        of: [{type: 'image'}],
+        validation: Rule => Rule.required()
       }),
       defineField({
         name: 'possessionDate',
@@ -150,6 +160,17 @@ export default defineType({
                 type: 'number',
                 description: 'Carpet Area in SqFt'
               }),
+              defineField({
+                name:  'configurationType',
+                title:  'Type',
+                type: 'string',
+                description: 'Compact/ Standard/ XL /...'
+            }), defineField({
+              name:  'configurationPrice',
+              title:  'Price',
+              type: 'string',
+              description: 'Price per config, Eg: 2.13cr'
+          })
             ]
         }]
       }),
