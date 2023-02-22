@@ -12,9 +12,21 @@ export default defineType({
         description: 'in BHK'
     }),
     defineField({
+        name:  'configurationType',
+        title:  'Type',
+        type: 'string',
+        description: 'Compact/ Standard/ XL /...'
+    }),
+    defineField({
         name: 'carpetArea',
         title: 'Carpet-Area',
         type: 'number',
-    })
+    }),
+    defineField({
+        name:  'configurationPrice',
+        title:  'Price',
+        type: 'string',
+        description: 'Price per config, Eg: 2.13cr'
+    }),
     ]
 })
