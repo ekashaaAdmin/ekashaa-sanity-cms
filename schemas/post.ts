@@ -9,11 +9,13 @@ export default defineType({
       name: 'title',
       title: 'Title',
       type: 'string',
+      validation: Rule => Rule.required()
     }),
     defineField({
       name: 'subTitle',
       title: 'Sub-Title',
       type: 'string',
+      validation: Rule => Rule.required()
     }),
     defineField({
       name: 'slug',
@@ -23,6 +25,7 @@ export default defineType({
         source: 'title',
         maxLength: 96,
       },
+      validation: Rule => Rule.required()
     }),
     defineField({
       name: 'author',
@@ -47,12 +50,13 @@ export default defineType({
     defineField({
       name: 'publishedAt',
       title: 'Published at',
-      type: 'datetime',
+      type: 'date',
     }),
     defineField({
       name: 'body',
       title: 'Body',
       type: 'blockContent',
+      validation: Rule => Rule.required()
     }),
     defineField( {
       name: 'featuredblog',
