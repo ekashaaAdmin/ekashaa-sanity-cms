@@ -43,9 +43,26 @@ export default defineType({
           defineField ({
             name: 'reraId',
             title: 'Rera Id',
-            type: 'string',
+            type: 'array',
             description: 'Please enter ReraId',
-            validation: Rule => Rule.required()
+            of: [{
+              type: 'object',
+              fields: [
+                defineField({
+                  name: 'towerReraId',
+                  title: 'Tower Rera Id',
+                  type: 'string',
+                  description: 'Tower specific Rera Id',
+                  validation: Rule => Rule.required()
+                }),
+                defineField({
+                  name: 'towerName',
+                  title: 'Tower Name',
+                  type: 'string',
+                  description: 'Tower Name if any'
+                }),
+              ]
+            }]
           }),
           defineField({
             name: 'projectDescription',
