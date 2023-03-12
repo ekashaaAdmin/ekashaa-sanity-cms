@@ -1,5 +1,4 @@
 import {defineField, defineType} from 'sanity'
-import property from './propertyInfo'
 
 export default defineType({
     name: 'testimonial',
@@ -14,18 +13,20 @@ export default defineType({
         defineField({
             name: 'name',
             title: 'Name of the Person',
-            type: 'string'
+            type: 'string',
+            validation: Rule => Rule.required()
         }),
         defineField({
-            name: 'propertyTestimonial',
+            name: 'property',
             title: 'Property',
-            type: 'reference',
-            to: [{type: property.name}]
+            description: 'property associated with the testimonial if any',
+            type: 'string'
         }),
         defineField({
             name: 'testimonialContent',
             title: 'Testimonial',
-            type: 'string'
+            type: 'string',
+            validation: Rule => Rule.required()
         })
     ]
 })
