@@ -74,8 +74,7 @@ export default defineType({
             name: 'brochureLink',
             title: 'Brochure Link',
             type: 'string',
-            description: 'Please provide download link for project brochure',
-            validation: Rule => Rule.required()
+            description: 'Please provide download link for project brochure'
           })
         ]
       }),
