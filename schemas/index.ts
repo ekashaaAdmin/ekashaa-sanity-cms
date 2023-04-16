@@ -7,5 +7,6 @@ import propertyInfo from './propertyInfo'
 import testimonials from './testimonial'
 import amenities from './amenity'
 import developerIcons from './developerIcons'
+import filterLocations from './filterLocation'
 
-export const schemaTypes = [post, author, category, blockContent, propertyInfo, developer, testimonials, amenities, developerIcons]
+export const schemaTypes = [post, author, category, blockContent, propertyInfo, developer, testimonials, amenities, developerIcons, filterLocations]
